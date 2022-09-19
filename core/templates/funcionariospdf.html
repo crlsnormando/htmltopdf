@@ -55,14 +55,14 @@
 </head>
 <body>
 
-<div class="container">
-    <div class="card">
-        <div class="card-header">
-            <h1>Lista de colaboradores</h1>
+
+
+        <div style="border: 1px solid red ;">
+            <img style="float: left;" src="https://www.grupoescolar.com/fotos/relatorio-A6.jpg" width="150">    <h1 style="text-align:center;">Lista de colaboradores</h1>
         </div>
-    </div>
-    <img src="https://www.grupoescolar.com/fotos/relatorio-A6.jpg" width="150">
-   <table>
+
+    
+   <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
@@ -72,17 +72,17 @@
        
             </tr>
         </thead>
-        <tbody>
+        <tbody style="text-align:center;">
         
                 {% for f in funcionarios %}
                     <tr>
-                        {% if forloop.counter == 1 %}
+                   
                             <td >{{f.id}}</td>
-                        {% endif %}
+                 
                         <td>{{f.nome}}</td>
                         <td>{{f.sobrenome}}</td>
                         <td>{{f.funcao}}</td>
-                        <td>very very long header</td>
+                   
                     </tr>
                 {% endfor %}
            
