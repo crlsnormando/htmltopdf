@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Details</title>
+    <style type="text/css">
+        @page {
+            size: A4;
+            margin: 1cm;
+            @frame content_frame {    
+                    /* Content Frame */
+              left: 50pt; 
+              width: 512pt; 
+              top: 50pt;   /* define a autura de onde comça  */
+              height: 632pt;
+          }
+        }
+        .card-header{
+            text-align: center;
+        }
+        .table{
+            border: 0.5px solid #ababab;
+            text-align: center;
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 5px;
+            table-layout:fixed;
+        }
+        .table tr th td{
+            white-space: nowrap;
+        }
+        .table th {
+            font-size:12px;
+            padding: 5px;
+            vertical-align: top;
+            background-color: #e8e8e8;
+        }
+        .table td {
+            padding: 5px;
+            vertical-align: top;
+            -pdf-keep-with-next: false;
+        }
+        .five {
+              width: 5%;
+            }
+        .twenty {
+              width: 20%;
+            }
+         .fifteen {
+              width: 15%;
+            }
+
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>Lista de colaboradores</h1>
+        </div>
+    </div>
+    <img src="https://www.grupoescolar.com/fotos/relatorio-A6.jpg" width="150">
+   <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Sobrenome</th>
+                <th>Função</th>
+       
+            </tr>
+        </thead>
+        <tbody>
+        
+                {% for f in funcionarios %}
+                    <tr>
+                        {% if forloop.counter == 1 %}
+                            <td >{{f.id}}</td>
+                        {% endif %}
+                        <td>{{f.nome}}</td>
+                        <td>{{f.sobrenome}}</td>
+                        <td>{{f.funcao}}</td>
+                        <td>very very long header</td>
+                    </tr>
+                {% endfor %}
+           
+        </tbody>
+    </table>
+
+</div>
+
+</div>
+</body>
+</html>
